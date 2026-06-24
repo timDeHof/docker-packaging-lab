@@ -10,6 +10,7 @@ const server = http.createServer((req, res) => {
   res.end("ok");
 });
 
-server.listen(3000);
+const PORT = process.env.PORT || 3000;
+server.listen(PORT);
 
 module.exports = server;
