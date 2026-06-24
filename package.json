@@ -2,6 +2,7 @@
   "name": "test",
   "version": "1.0.0",
   "scripts": {
-    "build": "node index.js"
+    "build": "node index.js",
+    "test": "node -e \"require('http').get('http://localhost:3000/health', r => { let d = ''; r.on('data', c => d += c); r.on('end', () => { process.exit(d === '{\\\"status\\\":\\\"ok\\\"}' ? 0 : 1) }) })\""
   }
 }
