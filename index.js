@@ -17,6 +17,13 @@ const server = http.createServer((req, res) => {
     originalEnd.apply(res, args);
   };
 
+  if (req.url === "/slow") {
+    return setTimeout(() => {
+      res.writeHead(200);
+      res.end("slow");
+    }, 2000);
+  }
+
   if (req.url === "/health") {
     res.writeHead(200, { "Content-Type": "application/json" });
     return res.end(JSON.stringify({ status: "ok" }));
