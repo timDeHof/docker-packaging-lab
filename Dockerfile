@@ -2,7 +2,7 @@ FROM node:22.14-alpine
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --production
-COPY index.js ./
+COPY index.js logger.js ./
 EXPOSE 3000
 USER node
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
