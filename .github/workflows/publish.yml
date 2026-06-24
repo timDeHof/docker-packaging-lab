@@ -68,3 +68,4 @@ jobs:
           image: ghcr.io/${{ github.repository }}:${{ github.sha }}
           service: docker-packaging-lab
           region: us-central1
+          service_account: github-actions-deployer@moonlit-autumn-492016-i6.iam.gserviceaccount.com
